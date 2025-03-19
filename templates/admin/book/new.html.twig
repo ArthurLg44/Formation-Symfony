@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout de livre{% endblock %}
+
+{% block body %}
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow">
+        <h1 class="text-2xl font-bold mb-6">Ajout de livre</h1>
+
+        {{ form_start(form) }}
+        <div class="space-y-4">
+            {{ form_row(form.title, { label: 'Titre', attr: { class: 'w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500' } }) }}
+            {{ form_row(form.isbn, { label: 'Numéro ISBN', attr: { class: 'w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500' } }) }}
+            {{ form_row(form.cover, { label: 'Couverture', attr: { class: 'w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500' } }) }}
+            {{ form_row(form.editedAt, { label: 'Edité le', attr: { class: 'w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500' } }) }}
+            {{ form_row(form.plot, { label: 'Résumé', attr: { class: 'w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500' } }) }}
+            {{ form_row(form.pageNumber, { label: 'Nombre de pages', attr: { class: 'w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500' } }) }}
+            {{ form_row(form.status, { label: 'Statut', attr: { class: 'w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500' } }) }}
+            {{ form_row(form.editor, { label: 'Editeur', attr: { class: 'w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500' } }) }}
+            {{ form_row(form.authors, { label: 'Auteur(s)', attr: { class: 'w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500' } }) }}
+        </div>
+
+        <div class="mt-6">
+            <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition">
+                Envoyer
+            </button>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

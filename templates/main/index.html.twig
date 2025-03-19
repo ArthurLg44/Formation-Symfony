@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le Cabanon - Catalogue en ligne{% endblock %}
+
+{% block body %}
+    {# Section d'en-tête avec le fond bleu #}
+    <div class="bg-blue-500 text-white text-center py-16 px-4">
+        <h1 class="text-4xl font-bold mb-2">Le Cabanon</h1>
+        <p class="text-xl mb-8">Catalogue en ligne des photos des copains !</p>
+        <a href="#" class="inline-block bg-white text-blue-500 font-medium py-2 px-6 rounded-md hover:bg-gray-100 transition-colors">
+            Parcourez le catalogue
+        </a>
+    </div>
+
+    {# Section d'information #}
+    <div class="max-w-4xl mx-auto px-4 py-12">
+        <h2 class="text-2xl font-bold mb-4">Le Cabanon : qu'est-ce que c'est ?</h2>
+        <p class="mb-6 text-gray-700">
+            Le Cabanon est le groupe officiel des copains avec un soucis d'alcool. Explorez les photos avec une recherche
+            efficace, vérifiez la disponibilité des copains en temps réel, et effectuez des
+            réservations de soirée en toute simplicité. Le Cabanon s'engage à faciliter l'accès à l'alcool
+            et promouvoir la richesse de notre patrimoine gustatif.
+        </p>
+
+        <div class="mt-8">
+            <h3 class="font-medium mb-2">Fonctionnalités clés :</h3>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li class="mb-1">Recherche avancée de photos</li>
+                <li class="mb-1">Consultation en temps réel du statut des disponibilités des copains pour picoler</li>
+                <li class="mb-1">Affichage détaillé des informations sur les alcools</li>
+                <li class="mb-1">Processus de réservation de soirée simplifié</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
