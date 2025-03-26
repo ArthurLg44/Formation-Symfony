@@ -98,15 +98,14 @@ class Book
         return $this;
     }
 
-    public function getEditor(): ?string
+    public function getEditor(): ?Editor
     {
         return $this->editor;
     }
 
-    public function setEditor(string $editor): static
+    public function setEditor(?Editor $editor): static
     {
         $this->editor = $editor;
-
         return $this;
     }
 

@@ -47,6 +47,7 @@ class BookType extends AbstractType
                 'class' => Author::class,
                 'choice_label' => 'id',
                 'multiple' => true,
+                'by_reference' => false,
             ])
         ;
     }
