@@ -8,15 +8,111 @@
 
         {{ form_start(form) }}
         <div class="space-y-4">
-            {{ form_row(form.name, { label: 'Nom', attr: { class: 'w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500' } }) }}
-            {{ form_row(form.dateOfBirth, { label: 'Date de naissance', attr: { class: 'w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500' } }) }}
-            {{ form_row(form.dateOfDeath, { label: 'Date de décès', attr: { class: 'w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500' } }) }}
-            {{ form_row(form.nationality, { label: 'Nationalité', attr: { class: 'w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500' } }) }}
-            {{ form_row(form.books, { label: 'Livres', attr: { class: 'w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500' } }) }}
+            <div>
+                {{ form_label(form.name, 'Nom') }}
+                {{ form_widget(form.name, {
+                    attr: {
+                        class: 'w-full rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ' ~
+                        (form.name.vars.errors|length > 0 ? 'border-red-500 text-red-900' : 'border-gray-300')
+                    }
+                }) }}
+                {% if form.name.vars.errors|length > 0 %}
+                    <div class="text-red-500 text-sm mt-1">
+                        {% for error in form.name.vars.errors %}
+                            {{ error.message }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div>
+                {{ form_label(form.dateOfBirth, 'Date de naissance') }}
+                {{ form_widget(form.dateOfBirth, {
+                    attr: {
+                        class: 'w-full rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ' ~
+                        (form.dateOfBirth.vars.errors|length > 0 ? 'border-red-500 text-red-900' : 'border-gray-300')
+                    }
+                }) }}
+                {% if form.dateOfBirth.vars.errors|length > 0 %}
+                    <div class="text-red-500 text-sm mt-1">
+                        {% for error in form.dateOfBirth.vars.errors %}
+                            {{ error.message }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div>
+                {{ form_label(form.dateOfDeath, 'Date de décès') }}
+                {{ form_widget(form.dateOfDeath, {
+                    attr: {
+                        class: 'w-full rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ' ~
+                        (form.dateOfDeath.vars.errors|length > 0 ? 'border-red-500 text-red-900' : 'border-gray-300')
+                    }
+                }) }}
+                {% if form.dateOfDeath.vars.errors|length > 0 %}
+                    <div class="text-red-500 text-sm mt-1">
+                        {% for error in form.dateOfDeath.vars.errors %}
+                            {{ error.message }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div>
+                {{ form_label(form.nationality, 'Nationalité') }}
+                {{ form_widget(form.nationality, {
+                    attr: {
+                        class: 'w-full rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ' ~
+                        (form.nationality.vars.errors|length > 0 ? 'border-red-500 text-red-900' : 'border-gray-300')
+                    }
+                }) }}
+                {% if form.nationality.vars.errors|length > 0 %}
+                    <div class="text-red-500 text-sm mt-1">
+                        {% for error in form.nationality.vars.errors %}
+                            {{ error.message }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div>
+                {{ form_label(form.books, 'Livres') }}
+                {{ form_widget(form.books, {
+                    attr: {
+                        class: 'w-full rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ' ~
+                        (form.books.vars.errors|length > 0 ? 'border-red-500 text-red-900' : 'border-gray-300')
+                    }
+                }) }}
+                {% if form.books.vars.errors|length > 0 %}
+                    <div class="text-red-500 text-sm mt-1">
+                        {% for error in form.books.vars.errors %}
+                            {{ error.message }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div>
+                {{ form_widget(form.certification, {
+                    attr: {
+                        class: 'w-5 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ' ~
+                        (form.certification.vars.errors|length > 0 ? 'border-red-500 text-red-900' : 'border-gray-300')
+                    }
+                }) }}
+                {{ form_label(form.certification, 'Je certifie de l\'exactitude des informations fournies') }}
+                {% if form.certification.vars.errors|length > 0 %}
+                    <div class="text-red-500 text-sm mt-1">
+                        {% for error in form.certification.vars.errors %}
+                            {{ error.message }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
         </div>
 
         <div class="mt-6">
-            <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition">
+            <button type="submit" class="w-32 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition text-sm">
                 Envoyer
             </button>
         </div>
